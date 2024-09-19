@@ -14,11 +14,13 @@ interface IHeader {
 const Header: FC<IHeader> = ({ onSwitchChange, switchDefaultValue }) => {
   return (
     <header className={cn("header extraLightBg")}>
-      <Logo />
-      <Switch
-        isChecked={switchDefaultValue}
-        onChange={async () => onSwitchChange()}
-      />
+      <div className="appSize headerContent">
+        <Logo />
+        <Switch
+          isChecked={switchDefaultValue}
+          onChange={async () => onSwitchChange()}
+        />
+      </div>
     </header>
   );
 };
