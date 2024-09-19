@@ -1,0 +1,38 @@
+.avatarItemWrapper {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+
+}
+
+.avatarItem {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: var(--grey-400);
+  background-position: center;
+  background-size: cover;
+  mask-image: radial-gradient(ellipse 18px 18px at 85% 80%, #0000 0px, #000 0);
+  transition: all .5s ease-in-out;
+}
+
+.onlineIndicator {
+  position: absolute;
+  z-index: 1;
+  right: 2%;
+  bottom: 7%;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: var(--success-dark);
+  transform: scale(0);
+  transition: transform .5s ease-in-out;
+}
+
+.online .avatarItem {
+  mask-image: radial-gradient(ellipse 18px 18px at 85% 80%, #0000 10px, #000 0);
+}
+.online .onlineIndicator {
+  transform: scale(1);
+}
