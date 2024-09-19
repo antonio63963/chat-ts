@@ -1,15 +1,18 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
   height: 80px;
-  width: 100%;
+  width: 100vw;
+
   background-color: var(--grey-100);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-
+  justify-content: center;
 }
 
-/* .dark .header {
-  background-color: var(--grey-900);
-  color: var(--white);
-} */
+.headerContent {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
