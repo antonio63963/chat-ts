@@ -1,0 +1,14 @@
+.extraLightBg {
+  background-color: var(--grey-100);
+  color: var(--grey-900);
+}
+
+.lightBg {
+  background-color: var(--grey-300);
+  color: var(--grey-900);
+}
+
+.dark .extraLightBg, .dark .lightBg {
+  background-color: var(--grey-900);
+  color: var(--white)
+}

@@ -1,22 +1,30 @@
-import React from 'react';
-import cn from 'classnames';
-import styles from './mainLayout.module.css';
+import React, { useCallback } from "react";
+import { Outlet } from "react-router-dom";
+import cn from "classnames";
+import styles from "./mainLayout.module.css";
+import { useSelector, useDispatch } from "react-redux";
 
-import Sidebar from '../../common/components/Header/Header';
+import Header from "../../common/components/Header/Header";
+
+import { switchThemeMode } from "../../redux/slices/themeSlice/themeSlice";
+
+import { IStore, ThemeMode } from "../../redux/redux.types";
 
 export default function MainLayout() {
-  return (
-    <div className={cn(styles.appContainer)}>
-      <Sidebar />
-      <main className={cn(styles.appContainerContent)}>
-        <div className={cn(styles.chats)}>
-          chats
-        </div>
-        <div className={cn(styles.chatInfo)}>
-          chatInfo
-        </div>
-      </main>
+  const themeMode = useSelector<IStore>((state) => state.theme.mode);
+  const dispatch = useDispatch();
 
+  const onSwitchTheme = useCallback(():void => {
+    dispatch(switchThemeMode());
+  }, [dispatch]);
+
+  return (
+    <div className={cn(styles.appContainer, themeMode as string)}>
+      <Header
+        switchDefaultValue={themeMode === ThemeMode.dark}
+        onSwitchChange={onSwitchTheme}
+      />
+      <Outlet/>
     </div>
-  )
+  );
 }

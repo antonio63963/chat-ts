@@ -7,11 +7,7 @@
   min-height: 100vh;
 }
 
-.sidebar {
-  height: 80px;
-  width: 100%;
-  background-color: green;
-}
+
 .appContainerContent {
   width: 100%;
   display: flex;
