@@ -1,10 +1,11 @@
 import React from 'react'
+import ChatsList from './components/ChatsList/ChatsList';
 
 function HomePage() {
   return (
-    <>
-    home
-    </>
+    <main className='homePage'>
+    <ChatsList/>
+    </main>
   )
 }
 

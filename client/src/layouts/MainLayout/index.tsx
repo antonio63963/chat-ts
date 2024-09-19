@@ -19,12 +19,14 @@ export default function MainLayout() {
   }, [dispatch]);
 
   return (
-    <div className={cn(styles.appContainer, themeMode as string)}>
-      <Header
-        switchDefaultValue={themeMode === ThemeMode.dark}
-        onSwitchChange={onSwitchTheme}
-      />
-      <Outlet/>
+    <div className={cn(styles.fullsize, 'whiteBg', themeMode as string)}>
+        <Header
+          switchDefaultValue={themeMode === ThemeMode.dark}
+          onSwitchChange={onSwitchTheme}
+        />
+      <div className={cn( 'appSize', styles.appContainer)}>
+        <Outlet/>
+      </div>
     </div>
   );
 }
