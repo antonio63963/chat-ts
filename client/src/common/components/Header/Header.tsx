@@ -14,7 +14,7 @@ interface IHeader {
 const Header: FC<IHeader> = ({ onSwitchChange, switchDefaultValue }) => {
   return (
     <header className={cn("header extraLightBg")}>
-      <div className="appSize headerContent">
+      <div className="appSize borderBottom headerContent">
         <Logo />
         <Switch
           isChecked={switchDefaultValue}

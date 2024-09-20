@@ -19,3 +19,14 @@
   background-color: var(--grey-900);
   color: var(--white);
 }
+
+.borderBottom {
+  border-bottom: 1px solid var(--grey-400);
+}
+.borderRight {
+  border-right: 1px solid var(--grey-400);
+}
+
+.dark .borderBottom, .dark .borderRight {
+  border-color: var(--grey-700);
+}

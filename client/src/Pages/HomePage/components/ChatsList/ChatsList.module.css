@@ -1,8 +1,14 @@
 .chatsList {
-  width: 280px;
+  width: 320px;
   height: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  padding: 20px 0;
+  
+  .chatlistContent {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 20px 20px;
+    height: 100%;
+  }
 }

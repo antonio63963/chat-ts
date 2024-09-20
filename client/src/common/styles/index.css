@@ -1,4 +1,5 @@
 @import "./colors.css";
+@import "./constants.css";
 @import "./theme.css";
 @import "./scroll.css";
 
@@ -26,8 +27,8 @@ body {
   display: flex;
   justify-content: center;
 
+  overflow: hidden;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 code {
