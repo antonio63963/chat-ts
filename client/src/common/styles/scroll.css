@@ -1,3 +1,26 @@
-* {
-  scrollbar-width: thin;
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--grey-300); 
+  border-radius: 10px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grey-500); 
+}
+
+/* THEMING  */
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--grey-700); 
+  border-radius: 10px;
 }
