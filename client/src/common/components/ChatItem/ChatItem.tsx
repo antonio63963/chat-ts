@@ -2,8 +2,8 @@ import React, { FC } from "react";
 
 import './ChatItem.css';
 
-import Avatar from "../../../../common/components/Avatar/Avatar";
-import Badge from "../../../../common/components/Badge/Badge";
+import Avatar from "../Avatar/Avatar";
+import Badge from "../Badge/Badge";
 
 interface IChatItem {
   avatar?: string | null;
@@ -12,6 +12,7 @@ interface IChatItem {
   time: string;
   unreadMsg: number;
   isOnline: boolean;
+  onClick: () => void;
 }
 
 const ChatItem = ({
@@ -21,9 +22,10 @@ const ChatItem = ({
   time,
   unreadMsg,
   isOnline,
+  onClick,
 }: IChatItem) => {
   return (
-    <div className="chatItem">
+    <div className="chatItem" onClick={() => onClick()}>
       <Avatar img={avatar} isOnline={isOnline} name={title}/>
       <div className="chatItemText">
         <h4 className="chatItemTitle">{title}</h4>
