@@ -1,13 +1,17 @@
-import React, { FC } from "react";
-import cn from "classnames";
-import styles from "./IconButton.module.css";
+import React, { ReactNode } from 'react';
+import './IconButton.css';
 
-interface IconButtonI {
-  isActive: boolean;
-}
-
-const IconButton: FC<IconButtonI> = ({ isActive }) => {
-  return <div className={cn(styles.IconButton, )}></div>;
+interface IIconButton {
+  children: ReactNode;
+  onClick: () => void;
 };
 
-export default IconButton;
+function IconButton({children, onClick}: IIconButton) {
+  return (
+    <button onClick={onClick} className='iconButton'>
+      {children}
+    </button>
+  )
+};
+
+export default IconButton

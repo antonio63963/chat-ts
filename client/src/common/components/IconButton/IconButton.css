@@ -1,0 +1,23 @@
+.iconButton {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 100%;
+  border: none;
+  width: 48px;
+  height: 48px;
+  color: var(--grey-900);
+  background-color: var(--grey-200);
+  transition: all .3s ease-in-out;
+}
+.iconButton:hover {
+  background-color: var(--grey-400);
+}
+
+.dark .iconButton {
+  color: var(--white);
+  background-color: transparent;
+}
+.dark .iconButton:hover {
+  color: var(--white);
+  background-color: var(--grey-800);
+}
