@@ -15,7 +15,6 @@ const Divider = ({ direction = "horizontal" }: IDivider) => {
       direction === "vertical" ? "borderRight" : "borderBottom"
       )}
     >
-      Divider
     </div>
   );
 };
