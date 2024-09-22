@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import cn from "classnames";
 
-import styles from "./HomePage.module.css";
+import "./HomePage.css";
+import "./HomePageMedia.css";
 
-import ChatsList from "./components/ChatsList/ChatsList";
+import ChatsListContainer from "./containers/ChatsListContainer/ChatsListContainer";
 import ChatDetailsContainer from "./containers/ChatDetailsContainer/ChatDetailsContainer";
 import { IChat } from "../../data";
 import NoConversation from "./components/NoConversation/NoConversation";
@@ -15,8 +16,8 @@ function HomePage() {
   };
 
   return (
-    <main className={cn(styles.homePage)}>
-      <ChatsList onSelectChat={onSelectChat} />
+    <main className={cn('homePage')}>
+      <ChatsListContainer onSelectChat={onSelectChat} />
       {!conversation ? (
         <NoConversation />
       ) : (
