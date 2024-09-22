@@ -2,12 +2,15 @@ import React from "react";
 import cn from "classnames";
 
 import styles from "./ChatsList.module.css";
-import ChatItem from "../ChatItem/ChatItem";
+import ChatItem from "../../../../common/components/ChatItem/ChatItem";
 
 
 import { chatList, IChat } from "../../../../data/index";
 
-function ChatsList() {
+interface IChatList {
+  onSelectChat: (data: IChat) => void;
+}
+function ChatsList({onSelectChat}: IChatList) {
   return (
     <div className={cn(styles.chatsList, "lightBg")}>
      
@@ -22,6 +25,7 @@ function ChatsList() {
                 subtitle={ch.msg}
                 time={ch.time}
                 unreadMsg={ch.unread}
+                onClick={() => onSelectChat(ch)}
               />
             );
           })}

@@ -11,6 +11,16 @@
   color: var(--grey-900);
 }
 
+.noConversationImgWrapper {
+  --img-wrapper-width: 250px;
+  width: clamp(50%, --img-wrapper-width, --img-wrapper-width);
+  height: clamp(50%, --img-wrapper-width, --img-wrapper-width);
+}
+.noConversationImgWrapper>img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
 .dark .noConversationContent {
   color: var(--grey-400);
 }
