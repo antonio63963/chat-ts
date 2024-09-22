@@ -1,0 +1,23 @@
+.archiveButton {
+  padding: 12px 16px;
+  border: none;
+  background-color: transparent;
+  border-radius: 20px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--grey-900);
+}
+.archiveButton:hover {
+  background-color: var(--grey-300);
+}
+
+.dark .archiveButton {
+  color: var(--grey-300);
+}
+.dark .archiveButton:hover {
+  background-color: var(--grey-800);
+}
