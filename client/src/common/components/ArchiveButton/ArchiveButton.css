@@ -9,15 +9,12 @@
   column-gap: 8px;
   cursor: pointer;
   font-weight: bold;
-  color: var(--grey-900);
+  color: var(--secondary-main);
 }
 .archiveButton:hover {
   background-color: var(--grey-300);
 }
 
-.dark .archiveButton {
-  color: var(--grey-300);
-}
 .dark .archiveButton:hover {
   background-color: var(--grey-800);
 }

@@ -1,0 +1,9 @@
+@media screen and (max-width: 660px) {
+  .homePage > .chatDetailsContainer,
+  .homePage > .noConversation {
+    display: none;
+  }
+  .homePage>.chatsList {
+    width: 100%;
+  }
+}
