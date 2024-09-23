@@ -16,6 +16,13 @@
 .outgoing .message {
   background-color: var(--white);
 }
+.dark .outgoing .message {
+  background-color: var(--grey-600);
+}
+.dark .message {
+  background-color: var(--grey-800);
+  color: var(--grey-200)
+}
 
 /* text message */
 .textMessage {
@@ -59,6 +66,13 @@
 
 .outgoing .replyMessage {
   background-color: var(--secondary-lighter);
+}
+
+.dark .outgoing .replyMessage {
+  background-color: var(--grey-800);
+}
+.dark .replyMessage {
+  background-color: var(--grey-800);
 }
 
 
