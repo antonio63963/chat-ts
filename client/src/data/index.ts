@@ -11,6 +11,22 @@ type IChat = {
   online: boolean;
 };
 
+type IMessage = {
+  type: "msg";
+  subtype?: "img" | "file" | "link" | "reply";
+  incoming: boolean;
+  outgoing: boolean;
+  preview?: string;
+  img?: string;
+  message?: string;
+  reply?: string;
+};
+
+type ITimeline = {
+  type: "timeline";
+  text: string;
+};
+
 const chatList: IChat[] = [
   {
     id: 0,
@@ -94,5 +110,75 @@ const chatList: IChat[] = [
   },
 ];
 
-export { chatList };
-export type { IChat };
+const chatHistory: (IMessage | ITimeline)[] = [
+  {
+    type: "msg",
+    message: "Hi 👋🏻, How are ya ?",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "timeline",
+    text: "Today",
+  },
+  {
+    type: "msg",
+    message: "Hi 👋 Panda, not bad, u ?",
+    incoming: false,
+    outgoing: true,
+  },
+  {
+    type: "msg",
+    message: "Can you send me an abstarct image?",
+    incoming: false,
+    outgoing: true,
+  },
+  {
+    type: "msg",
+    message: "Ya sure, sending you a pic",
+    incoming: true,
+    outgoing: false,
+  },
+
+  {
+    type: "msg",
+    subtype: "img",
+    message: "Here You Go",
+    img: "/mockImg/abstract.jpg",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "msg",
+    message: "Can you please send this in file format?",
+    incoming: false,
+    outgoing: true,
+  },
+
+  {
+    type: "msg",
+    subtype: "file",
+    message: "Yes sure, here you go.",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "msg",
+    subtype: "link",
+    preview: "/mockImg/cat.jpg",
+    message: "Yep, I can also do that",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "msg",
+    subtype: "reply",
+    reply: "This is a reply",
+    message: "Yep, I can also do that",
+    incoming: false,
+    outgoing: true,
+  },
+];
+
+export { chatList, chatHistory };
+export type { IChat, IMessage, ITimeline };

@@ -1,0 +1,17 @@
+.timelineDivider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timelineDivider__border {
+  width: 100%;
+}
+.timelineDivider__text{
+  margin: 12px;
+  color: var(--grey-400);
+}
+
+.dark .timelineDivider__text {
+  color: var(--white);
+}
