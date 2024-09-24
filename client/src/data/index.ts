@@ -12,6 +12,7 @@ type IChat = {
 };
 
 type IMessage = {
+  id: string | number;
   type: "msg";
   subtype?: "img" | "file" | "link" | "reply";
   incoming: boolean;
@@ -112,6 +113,7 @@ const chatList: IChat[] = [
 
 const chatHistory: (IMessage | ITimeline)[] = [
   {
+    id: 1,
     type: "msg",
     message: "Hi 👋🏻, How are ya ?",
     incoming: true,
@@ -122,18 +124,21 @@ const chatHistory: (IMessage | ITimeline)[] = [
     text: "Today",
   },
   {
+    id: 2,
     type: "msg",
     message: "Hi 👋 Panda, not bad, u ?",
     incoming: false,
     outgoing: true,
   },
   {
+    id: 3,
     type: "msg",
     message: "Can you send me an abstarct image?",
     incoming: false,
     outgoing: true,
   },
   {
+    id: 4,
     type: "msg",
     message: "Ya sure, sending you a pic",
     incoming: true,
@@ -141,6 +146,7 @@ const chatHistory: (IMessage | ITimeline)[] = [
   },
 
   {
+    id: 5,
     type: "msg",
     subtype: "img",
     message: "Here You Go",
@@ -149,6 +155,7 @@ const chatHistory: (IMessage | ITimeline)[] = [
     outgoing: false,
   },
   {
+    id: 6,
     type: "msg",
     message: "Can you please send this in file format?",
     incoming: false,
@@ -156,6 +163,7 @@ const chatHistory: (IMessage | ITimeline)[] = [
   },
 
   {
+    id: 7,
     type: "msg",
     subtype: "file",
     message: "Yes sure, here you go.",
@@ -163,6 +171,7 @@ const chatHistory: (IMessage | ITimeline)[] = [
     outgoing: false,
   },
   {
+    id: 8,
     type: "msg",
     subtype: "link",
     preview: "/mockImg/cat.jpg",
@@ -171,6 +180,7 @@ const chatHistory: (IMessage | ITimeline)[] = [
     outgoing: false,
   },
   {
+    id: 9,
     type: "msg",
     subtype: "reply",
     reply: "This is a reply",

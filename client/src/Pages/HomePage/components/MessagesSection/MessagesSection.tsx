@@ -17,13 +17,14 @@ interface IMessagesSection {
 function MessagesSection({ messages }: IMessagesSection) {
   return (
     <div className="messagesSection extraLightBg">
-      {messages.map((msg) => {
+      {messages.map((msg, idx) => {
         switch (msg.type) {
           case "msg":
             switch (msg.subtype) {
               case "file":
                 return (
                   <FileMessage
+                    key={msg.id}
                     isOutgoing={msg.outgoing}
                     message={msg.message!}
                   />
@@ -31,6 +32,7 @@ function MessagesSection({ messages }: IMessagesSection) {
               case "img":
                 return (
                   <MediaMessage
+                    key={msg.id}
                     src={msg.img!}
                     text={msg.message}
                     isOutgoing={msg.outgoing}
@@ -39,6 +41,7 @@ function MessagesSection({ messages }: IMessagesSection) {
               case "link":
                 return (
                   <LinkMessage
+                    key={msg.id}
                     isOutgoing={msg.outgoing}
                     link={"www.youtube.com"}
                     message={msg.message}
@@ -47,6 +50,7 @@ function MessagesSection({ messages }: IMessagesSection) {
               case "reply":
                 return (
                   <ReplyMessage
+                    key={msg.id}
                     replyMessage={msg.reply!}
                     isOutgoing={msg.outgoing}
                     message={msg.message!}
@@ -55,6 +59,7 @@ function MessagesSection({ messages }: IMessagesSection) {
               default:
                 return (
                   <TextMessage
+                    key={msg.id}
                     outgoing={msg.outgoing}
                     text={msg.message!}
                     incoming={msg.incoming}
@@ -62,7 +67,7 @@ function MessagesSection({ messages }: IMessagesSection) {
                 );
             }
           case "timeline":
-            return <TimelineDivider text={msg.text} />;
+            return <TimelineDivider key={"divider" + idx} text={msg.text} />;
 
           default:
             return "oh, no!";
