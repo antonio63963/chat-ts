@@ -13,14 +13,3 @@
   outline: none;
   background: none;
 }
-
-.dark .searchInput {
-  background-color: var(--grey-600);
-  color: var(--white);
-}
-.dark .searchInput > input {
-  color: var(--white);
-}
-.dark .searchInput > input::placeholder {
-  color: var(--grey-400);
-}

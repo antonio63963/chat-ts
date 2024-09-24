@@ -31,3 +31,17 @@
 .dark .borderRight {
   border-color: var(--grey-700);
 }
+/* Input */
+.inputWrapper {
+  background-color: var(--secondary-lighter);
+}
+.dark .inputWrapper {
+  background-color: var(--grey-600);
+  color: var(--white);
+}
+.dark .inputWrapper > input {
+  color: var(--white);
+}
+.dark .inputWrapper > input::placeholder {
+  color: var(--grey-400);
+}

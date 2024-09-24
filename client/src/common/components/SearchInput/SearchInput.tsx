@@ -10,7 +10,7 @@ interface ISearchInput {
 
 function SearchInput({ value, onChange }: ISearchInput) {
   return (
-    <div className="searchInput lightBgSecondary">
+    <div className="searchInput inputWrapper">
       <MagnifyingGlass size={16} />
       <input
         type="text"
