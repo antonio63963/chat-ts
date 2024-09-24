@@ -7,10 +7,24 @@
   height: 48px;
   color: var(--grey-900);
   background-color: var(--grey-200);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .iconButton:hover {
   background-color: var(--grey-400);
+}
+
+.filledIconButton {
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-main);
+  border-radius: 10px;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
 }
 
 .dark .iconButton {
