@@ -7,12 +7,14 @@ interface IIconButton {
   children: ReactNode;
   onClick: () => void;
   isFilled?: boolean;
+  bgColor?: string;
 }
 
-function IconButton({ children, onClick, isFilled }: IIconButton) {
+function IconButton({ children, onClick, isFilled, bgColor }: IIconButton) {
   return (
     <button
       onClick={onClick}
+      style={{backgroundColor: bgColor}}
       className={cn(isFilled ? "filledIconButton" : "iconButton")}
     >
       {children}
