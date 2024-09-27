@@ -1,13 +1,16 @@
 import { useSelector } from "react-redux";
 import cn from "classnames";
-import { PaperPlaneTilt, Paperclip, Smiley } from "phosphor-react";
+import { PaperPlaneTilt } from "phosphor-react";
 
 import IconButton from "../../../../common/components/IconButton/IconButton";
 
 import styles from "./messageTextField.module.css";
-import EmojiMart from "../../../../common/EmojiMart/EmojiMart";
+
 
 import { IStore, ThemeState } from "../../../../redux/redux.types";
+import AttachActionsContainer from "../../../../containers/AttachActionsContainer/AttachActionsContainer";
+
+import EmojiPickerContainer from "../../../../containers/EmojiPickerContainer/EmojiPickerContainer";
 
 interface IMessageTextField {
   value: string;
@@ -16,7 +19,8 @@ interface IMessageTextField {
   isShownEmoji: boolean;
   onSelectedEmoji: ({ native }: any) => void;
   showHideEmoji: () => void;
-}
+};
+
 const MessageTextField = ({
   value,
   onChange,
@@ -29,23 +33,14 @@ const MessageTextField = ({
   console.log("THEME: ", theme);
   return (
     <div className={cn(styles.footer)}>
-      <EmojiMart
-        isShown={isShownEmoji}
-        onSelected={onSelectedEmoji}
-        theme={theme.mode}
-      />
       <div className={cn(styles.wrapper, "inputWrapper")}>
-        <IconButton onClick={() => {}}>
-          <Paperclip size={24} />
-        </IconButton>
+        <AttachActionsContainer />
         <input
           className={cn(styles.messageTextField)}
           value={value}
           onChange={(e) => onChange(e.target.value)}
         />
-        <IconButton onClick={showHideEmoji}>
-          <Smiley size={24} />
-        </IconButton>
+        <EmojiPickerContainer onSelected={onSelectedEmoji} theme={theme.mode} />
       </div>
       <IconButton onClick={onSend} isFilled={true}>
         <PaperPlaneTilt size={24} />

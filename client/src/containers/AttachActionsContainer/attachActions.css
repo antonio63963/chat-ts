@@ -1,0 +1,11 @@
+.attachActions_wrapper {
+  position: relative;
+
+}
+.attachActions_actions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  position: absolute;
+  padding-bottom: 20px;
+}
