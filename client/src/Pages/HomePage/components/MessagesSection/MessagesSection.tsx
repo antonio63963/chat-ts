@@ -60,9 +60,8 @@ function MessagesSection({ messages }: IMessagesSection) {
                 return (
                   <TextMessage
                     key={msg.id}
-                    outgoing={msg.outgoing}
+                    isOutgoing={msg.outgoing}
                     text={msg.message!}
-                    incoming={msg.incoming}
                   />
                 );
             }
