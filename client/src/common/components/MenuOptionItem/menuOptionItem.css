@@ -1,0 +1,12 @@
+.menuOptionItem {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.menuOptionItem:hover {
+  background-color: var(--grey-200);
+}
+
+.menuOptionItem_title {
+  font-weight: bold;
+  text-wrap: nowrap;
+}
