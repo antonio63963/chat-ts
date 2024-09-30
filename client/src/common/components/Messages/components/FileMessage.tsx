@@ -5,10 +5,11 @@ import IconButton from "../../IconButton/IconButton";
 interface IFileMessage {
   isOutgoing: boolean;
   message: string;
+  messageClass: string;
 }
-const FileMessage = ({ isOutgoing, message }: IFileMessage) => {
+const FileMessage = ({ isOutgoing, message, messageClass }: IFileMessage) => {
   return (
-    <MessageLayout isOutgoing={isOutgoing}>
+    <MessageLayout isOutgoing={isOutgoing} messageClass={messageClass}>
       <div className="message docMessage">
         <div className="docMessage__file">
           <FileDoc size={24} />

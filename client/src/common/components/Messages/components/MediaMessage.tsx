@@ -7,11 +7,17 @@ interface IMediaMessage {
   src: string;
   text?: string;
   isOutgoing: boolean;
-};
+  messageClass: string;
+}
 
-const MediaMessage = ({ src, text, isOutgoing }: IMediaMessage) => {
+const MediaMessage = ({
+  src,
+  text,
+  isOutgoing,
+  messageClass,
+}: IMediaMessage) => {
   return (
-    <MessageLayout isOutgoing={isOutgoing}>
+    <MessageLayout isOutgoing={isOutgoing} messageClass={messageClass}>
       <div className={cn("message", "mediaMessage")}>
         <div
           className={cn("mediaImageWrapper")}

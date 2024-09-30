@@ -9,6 +9,7 @@ import {
   LinkMessage,
   FileMessage,
 } from "../../../../common/components/Messages";
+import { I } from "@faker-js/faker/dist/airline-BBTAAfHZ";
 
 interface IMessagesSection {
   messages: (IMessage | ITimeline)[];
@@ -18,6 +19,7 @@ function MessagesSection({ messages }: IMessagesSection) {
   return (
     <div className="messagesSection extraLightBg">
       {messages.map((msg, idx) => {
+        const messageClass = `message_${(msg as IMessage).id}`;
         switch (msg.type) {
           case "msg":
             switch (msg.subtype) {
@@ -25,6 +27,7 @@ function MessagesSection({ messages }: IMessagesSection) {
                 return (
                   <FileMessage
                     key={msg.id}
+                    messageClass={messageClass}
                     isOutgoing={msg.outgoing}
                     message={msg.message!}
                   />
@@ -33,6 +36,7 @@ function MessagesSection({ messages }: IMessagesSection) {
                 return (
                   <MediaMessage
                     key={msg.id}
+                    messageClass={messageClass}
                     src={msg.img!}
                     text={msg.message}
                     isOutgoing={msg.outgoing}
@@ -42,6 +46,7 @@ function MessagesSection({ messages }: IMessagesSection) {
                 return (
                   <LinkMessage
                     key={msg.id}
+                    messageClass={messageClass}
                     isOutgoing={msg.outgoing}
                     link={"www.youtube.com"}
                     message={msg.message}
@@ -51,6 +56,7 @@ function MessagesSection({ messages }: IMessagesSection) {
                 return (
                   <ReplyMessage
                     key={msg.id}
+                    messageClass={messageClass}
                     replyMessage={msg.reply!}
                     isOutgoing={msg.outgoing}
                     message={msg.message!}
@@ -60,6 +66,7 @@ function MessagesSection({ messages }: IMessagesSection) {
                 return (
                   <TextMessage
                     key={msg.id}
+                    messageClass={messageClass}
                     isOutgoing={msg.outgoing}
                     text={msg.message!}
                   />

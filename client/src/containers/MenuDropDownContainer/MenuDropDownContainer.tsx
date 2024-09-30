@@ -1,4 +1,11 @@
-import { CSSProperties, useCallback, useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import cn from "classnames";
 
 import styles from "./menuDropDownContainer.module.css";
@@ -31,25 +38,29 @@ const messageOptions = [
 
 interface IMenuDropDown {
   styleDropdown?: CSSProperties;
+  messageClass: string;
 }
 
-const MenuDropDownContainer = ({ styleDropdown }: IMenuDropDown) => {
+const MenuDropDownContainer = ({
+  styleDropdown,
+  messageClass,
+}: IMenuDropDown) => {
   const [isShownMenu, setIsShownMenu] = useState<boolean>(false);
   const menuRef = useRef(null);
   const menuHeight = useHeigtElement(menuRef, isShownMenu);
 
-  const onCloseMenu = useCallback(function(e: MouseEvent) {
-    const element = e.target as Element;
-
-    if (
-      element.closest('.dropdown')
-    ) {
-      return;
-    } else {
-      console.log('BOOM!!!')
-      setIsShownMenu(false);
-    }
-  }, []);
+  const onCloseMenu = useCallback(
+    function (e: MouseEvent) {
+      const element = e.target as Element;
+      if (element.closest(`.${messageClass}`)) {
+        return;
+      } else {
+        console.log("BOOM!!!");
+        setIsShownMenu(false);
+      }
+    },
+    [messageClass]
+  );
 
   useEffect(() => {
     console.log("USe EFF", isShownMenu);
@@ -59,7 +70,10 @@ const MenuDropDownContainer = ({ styleDropdown }: IMenuDropDown) => {
   }, [isShownMenu, onCloseMenu]);
 
   return (
-    <div className={cn(styles.menuDropDown_wrapper, 'dropdown')} style={styleDropdown}>
+    <div
+      className={cn(styles.menuDropDown_wrapper, messageClass)}
+      style={styleDropdown}
+    >
       {isShownMenu && (
         <div
           ref={menuRef}

@@ -6,11 +6,18 @@ interface ILinkMessage {
   message?: string;
   link: string;
   preview?: string;
+  messageClass: string;
 }
 
-const LinkMessage = ({ isOutgoing, message, link, preview }: ILinkMessage) => {
+const LinkMessage = ({
+  isOutgoing,
+  message,
+  link,
+  preview,
+  messageClass,
+}: ILinkMessage) => {
   return (
-    <MessageLayout isOutgoing={isOutgoing}>
+    <MessageLayout isOutgoing={isOutgoing} messageClass={messageClass}>
       <div className={cn("message textMessage")}>
         <p>{message}</p>
         <div

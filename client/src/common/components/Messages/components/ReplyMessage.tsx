@@ -5,16 +5,19 @@ interface IReplyMessage {
   replyMessage: string;
   message: string;
   isOutgoing: boolean;
+  messageClass: string;
 }
-const ReplyMessage = ({ replyMessage, message, isOutgoing }: IReplyMessage) => {
+const ReplyMessage = ({
+  replyMessage,
+  message,
+  isOutgoing,
+  messageClass,
+}: IReplyMessage) => {
   return (
-    <MessageLayout isOutgoing = {isOutgoing}>
+    <MessageLayout isOutgoing={isOutgoing} messageClass={messageClass}>
       <div className={cn("message", "textMessage")}>
-        <div
-          className={cn("replyMessage")}
-
-        >{replyMessage}</div>
-      <p>{message}</p>
+        <div className={cn("replyMessage")}>{replyMessage}</div>
+        <p>{message}</p>
       </div>
     </MessageLayout>
   );
