@@ -1,27 +1,18 @@
 import cn from "classnames";
+import MessageLayout from "./MessageLayout";
 
 interface IMessage {
   text: string;
-  outgoing: boolean;
-  incoming: boolean;
-};
+  isOutgoing: boolean;
+}
 
-const TextMessage = ({ text, outgoing, incoming }: IMessage) => {
+const TextMessage = ({ text, isOutgoing }: IMessage) => {
   return (
-    <div
-      className={cn(
-        "messageWrapper",
-        outgoing ? "outgoing" : "incoming"
-      )}
-    >
-      <div
-        className={cn(
-          "message textMessage",
-        )}
-      >
+    <MessageLayout isOutgoing={isOutgoing}>
+      <div className={cn("message textMessage")}>
         <p>{text}</p>
       </div>
-    </div>
+    </MessageLayout>
   );
 };
 

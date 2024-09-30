@@ -1,6 +1,7 @@
 import cn from "classnames";
 
 import "../messages.css";
+import MessageLayout from "./MessageLayout";
 
 interface IMediaMessage {
   src: string;
@@ -10,7 +11,7 @@ interface IMediaMessage {
 
 const MediaMessage = ({ src, text, isOutgoing }: IMediaMessage) => {
   return (
-    <div className={cn("messageWrapper", isOutgoing ? "outgoing" : "incoming")}>
+    <MessageLayout isOutgoing={isOutgoing}>
       <div className={cn("message", "mediaMessage")}>
         <div
           className={cn("mediaImageWrapper")}
@@ -18,7 +19,7 @@ const MediaMessage = ({ src, text, isOutgoing }: IMediaMessage) => {
         ></div>
         {text && <p className={cn("mediaText")}>{text}</p>}
       </div>
-    </div>
+    </MessageLayout>
   );
 };
 

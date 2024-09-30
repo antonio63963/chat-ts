@@ -1,4 +1,5 @@
 import cn from "classnames";
+import MessageLayout from "./MessageLayout";
 
 interface ILinkMessage {
   isOutgoing: boolean;
@@ -9,7 +10,7 @@ interface ILinkMessage {
 
 const LinkMessage = ({ isOutgoing, message, link, preview }: ILinkMessage) => {
   return (
-    <div className={cn("messageWrapper", isOutgoing ? "outgoing" : "incoming")}>
+    <MessageLayout isOutgoing={isOutgoing}>
       <div className={cn("message textMessage")}>
         <p>{message}</p>
         <div
@@ -18,7 +19,7 @@ const LinkMessage = ({ isOutgoing, message, link, preview }: ILinkMessage) => {
         ></div>
         <a href={link}>{link}</a>
       </div>
-    </div>
+    </MessageLayout>
   );
 };
 

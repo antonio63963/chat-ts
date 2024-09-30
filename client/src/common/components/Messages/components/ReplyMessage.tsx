@@ -1,4 +1,5 @@
 import cn from "classnames";
+import MessageLayout from "./MessageLayout";
 
 interface IReplyMessage {
   replyMessage: string;
@@ -7,7 +8,7 @@ interface IReplyMessage {
 }
 const ReplyMessage = ({ replyMessage, message, isOutgoing }: IReplyMessage) => {
   return (
-    <div className={cn("messageWrapper", isOutgoing ? "outgoing" : "incoming")}>
+    <MessageLayout isOutgoing = {isOutgoing}>
       <div className={cn("message", "textMessage")}>
         <div
           className={cn("replyMessage")}
@@ -15,7 +16,7 @@ const ReplyMessage = ({ replyMessage, message, isOutgoing }: IReplyMessage) => {
         >{replyMessage}</div>
       <p>{message}</p>
       </div>
-    </div>
+    </MessageLayout>
   );
 };
 
